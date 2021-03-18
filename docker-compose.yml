@@ -1,0 +1,15 @@
+version: '3'
+
+networks:
+  barbearia-network:
+    driver: bridge
+
+services:
+  barbearia:
+    image: thileal/barbearia
+    container_name: barbearia-server
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - barbearia-network
