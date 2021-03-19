@@ -13,4 +13,4 @@ echo "The build number is ${TRAVIS_BUILD_NUMBER}"
   --server=$KUBERNETES_SERVER \
   --certificate-authority=cert.crt \
   --token=$KUBERNETES_TOKEN \
-  set image deployment/barbearia-deployment thileal/barbearia:${TRAVIS_BUILD_NUMBER} --record
+  set image deployment/barbearia-deployment barbearia-container=thileal/barbearia:${TRAVIS_BUILD_NUMBER} --record
