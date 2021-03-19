@@ -1,18 +1,23 @@
 language: bash
+
 sudo: required
+
 branches:
   only:
   - master
 services:
 - docker
+
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
   - chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
   - docker build -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
   - docker push thileal/barbearia
+
 script:
 - bash scripts/update-kube.sh
+
 deploy:
   provider: script
   script: bash scripts/deploy.sh
