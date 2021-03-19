@@ -4,8 +4,8 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'src/views'));
-app.use(express.static(path.join(__dirname, 'src/public')));
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', async (req, res) => {
   res.render('index');
@@ -17,8 +17,8 @@ app.get('/produtos', async (req, res) => {
 
 app.listen(port, (err) => {
   if (err) {
-    console.log("Couldn't start Node server");
+    console.log('Não foi possível iniciar servidor');
   } else {
-    console.log('Sucessfully started Node server!');
+    console.log('Servidor escutando na porta 3000!');
   }
 });
