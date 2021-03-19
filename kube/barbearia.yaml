@@ -1,0 +1,33 @@
+# Service Config
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-barbearia
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: barbearia
+---
+# Deployment Config
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: barbearia-deployment
+spec:
+  template:
+    metadata:
+      name: barbearia
+      labels:
+        app: barbearia
+    spec:
+      containers:
+        - name: barbearia-container
+          image: thileal/barbearia:VERSION
+          ports:
+            - containerPort: 3000
+  selector:
+    matchLabels:
+      app: barbearia

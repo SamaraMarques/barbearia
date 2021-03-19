@@ -1,0 +1,32 @@
+# ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: cicd
+  namespace: default
+---
+# Role
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cicd
+  namespace: default
+rules:
+  - apiGroups: ["", "apps", "batch", "extensions"]
+    resources: ["deployments", "services", "replicasets", "pods", "jobs", "cronjobs"]
+    verbs: ["*"]
+---
+# RoleBinding
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cicd
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: cicd
+    namespace: default
+roleRef:
+  kind: Role
+  name: cicd
+  apiGroup: rbac.authorization.k8s.io
