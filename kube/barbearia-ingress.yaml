@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - barbeariacompasso.tk
-    secretName: barbearia-tls
+    - dev.barbeariacompasso.tk
+    secretName: barbearia-dev-tls
   rules:
-  - host: barbeariacompasso.tk
+  - host: dev.barbeariacompasso.tk
     http:
       paths:
       - backend:
