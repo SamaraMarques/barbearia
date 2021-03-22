@@ -1,4 +1,5 @@
-language: bash
+language: node_js
+node_js: "stable"
 
 sudo: required
 
@@ -14,8 +15,13 @@ before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
   - docker build -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
   - docker push thileal/barbearia
+  - npm update
+
+install:
+- npm install
 
 script:
+- npm test
 - bash scripts/update-kube.sh
 
 deploy:
