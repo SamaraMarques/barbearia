@@ -1,0 +1,8 @@
+node_modules
+/database
+node_modules
+.gitignore
+.travis.yml
+Makefile
+.env
+.dockerignore

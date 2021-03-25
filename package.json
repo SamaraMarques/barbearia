@@ -20,7 +20,10 @@
   "homepage": "https://github.com/SamaraMarques/barbearia#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize-cli": "^6.2.0",
+    "sequelize": "^6.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
