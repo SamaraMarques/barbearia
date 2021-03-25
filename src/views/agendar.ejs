@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Agendar Horário - Barbearia Compasso</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/agendar.css">
+</head>
+
+<body>
+	<%- include('header') %>
+
+		<main>
+			<div class="form-div">
+
+				<div class="form-area">
+					<form method="POST" action="/agendar">
+						<div>
+							<label for="nome">Nome</label>
+							<input type="text" id="nome" name="nome" placeholder="Seu nome..." required>
+						</div>
+						<div>
+							<label for="whatsapp">Whatsapp</label>
+							<input type="number" id="whatsapp" name="whatsapp" placeholder="Seu whatsapp..." required>
+						</div>
+
+						<div class="form-input">
+							<label for="dia">Dia:</label>
+							<input type="date" id="dia" name="dia" required>
+						</div>
+
+						<label for="horario">Horário</label>
+						<label class="horas" for="time-8:00">
+							<input type="radio" name="horario" value="08:00:00+00:00" id="time-8:00" checked>
+							8:00
+						</label>
+						<label class="horas" for="time-9:00">
+							<input type="radio" name="horario" value="09:00:00+00:00" id="time-9:00">
+							9:00
+						</label>
+						<label class="horas" for="time-10:00">
+							<input type="radio" name="horario" value="10:00:00+00:00" id="time-10:00">
+							10:00
+						</label>
+						<label class="horas" for="time-11:00">
+							<input type="radio" name="horario" value="11:00:00+00:00" id="time-11:00">
+							11:00
+						</label>
+						<label class="horas" for="time-12:00">
+							<input type="radio" name="horario" value="12:00:00+00:00" id="time-12:00">
+							12:00
+						</label>
+						<label class="horas" for="time-13:00">
+							<input type="radio" name="horario" value="13:00:00+00:00" id="time-13:00">
+							13:00
+						</label>
+						<label class="horas" for="time-14:00">
+							<input type="radio" name="horario" value="14:00:00+00:00" id="time-14:00">
+							14:00
+						</label>
+						<label class="horas" for="time-15:00">
+							<input type="radio" name="horario" value="15:00:00+00:00" id="time-15:00">
+							15:00
+						</label>
+						<label class="horas" for="time-16:00">
+							<input type="radio" name="horario" value="16:00:00+00:00" id="time-16:00">
+							16:00
+						</label>
+						<label class="horas" for="time-17:00">
+							<input type="radio" name="horario" value="17:00:00+00:00" id="time-17:00">
+							17:00
+						</label>
+						<label class="horas" for="time-18:00">
+							<input type="radio" name="horario" value="18:00:00+00:00" id="time-18:00">
+							18:00
+						</label>
+				</div>
+
+				<div class="button">
+					<input type="submit" value="Agendar">
+				</div>
+			</div>
+			</form>
+			</div>
+		</main>
+		<%- include('footer') %>
+</body>
+
+<script>
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1; //January is 0!
+	var yyyy = today.getFullYear();
+	if (dd < 10) {
+		dd = '0' + dd
+	}
+	if (mm < 10) {
+		mm = '0' + mm
+	}
+
+	today = yyyy + '-' + mm + '-' + dd;
+	document.getElementById("dia").setAttribute("min", today);
+</script>
+
+</html>

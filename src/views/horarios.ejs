@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Horários agendados - Barbearia Compasso</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/horarios.css">
+</head>
+
+<body>
+	<%- include('header') %>
+
+		<main>
+			<div class="horarios">
+				<ul>
+					<% if (horarios.length==0) {%>
+						<div class="horario">
+							<p> Sem horários agendados!</p>
+						</div>
+						<% }; %>
+
+							<% horarios.forEach(function({data, nome, whatsapp, id}) { const options={ weekday: 'long' ,
+								year: 'numeric' , month: 'numeric' , day: 'numeric' , hour: 'numeric' , minute: 'numeric' ,
+								timeZone: 'UTC' }; %>
+								<div class="horario">
+									<li> Horário:
+										<p>
+											<%= data.toLocaleString('pt-BR', options) %>
+										</p>
+									</li>
+
+									<li> Nome:
+										<p>
+											<%= nome %>
+										</p>
+									</li>
+
+									<li> Whatsapp:
+										<p>
+											<%= whatsapp %>
+										</p>
+									</li>
+
+									<div class="deletar">
+										<a href="/deletar/<%= id %>">Deletar</a>
+									</div>
+								</div>
+								<% }); %>
+				</ul>
+			</div>
+		</main>
+		<%- include('footer') %>
+</body>
+
+</html>
