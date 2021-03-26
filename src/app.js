@@ -1,12 +1,11 @@
 const express = require('express');
-const bodyparser = require('body-parser');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 3000;
 const models = require('./app/models');
 
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 app.set('view engine', 'ejs');

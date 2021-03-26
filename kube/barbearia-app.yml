@@ -27,13 +27,13 @@ spec:
         app: barbearia
     spec:
       containers:
-      - name: barbearia-container
-        image: thileal/barbearia:latest
-        envFrom:
-         - configMapRef:
-            name: barbearia-app-configmap
-#        resources:
-#          requests:
-#            cpu: 100m
-        ports:
-          - containerPort: 3000
+        - name: barbearia-container
+          image: thileal/barbearia:latest
+          envFrom:
+            - configMapRef:
+                name: barbearia-app-configmap
+          #        resources:
+          #          requests:
+          #            cpu: 100m
+          ports:
+            - containerPort: 3000
