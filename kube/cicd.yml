@@ -13,7 +13,7 @@ metadata:
   namespace: default
 rules:
   - apiGroups: ["", "apps", "batch", "extensions"]
-    resources: ["deployments", "services", "replicasets", "pods", "jobs", "cronjobs"]
+    resources: ["*"]
     verbs: ["*"]
 ---
 # RoleBinding
