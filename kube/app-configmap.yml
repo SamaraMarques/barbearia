@@ -4,8 +4,8 @@ metadata:
   name: barbearia-app-configmap
 data:
   DB_DIALECT: postgres
-  DB_HOST: postgres
+  DB_HOST: svc-barbearia-db
   DB_USERNAME: postgres
   DB_PASSWORD: postgres
   DB_DATABASE: barbearia-db
-  DB_PORT: '5432'
+  DB_PORT: "5432"

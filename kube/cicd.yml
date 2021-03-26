@@ -12,7 +12,7 @@ metadata:
   name: cicd
   namespace: default
 rules:
-  - apiGroups: ["", "apps", "batch", "extensions"]
+  - apiGroups: ["*"]
     resources: ["*"]
     verbs: ["*"]
 ---
