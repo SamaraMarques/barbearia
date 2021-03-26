@@ -8,7 +8,7 @@ describe("Test app responses", () => {
     expect(response.text.includes('Barbearia Compasso')).toBe(true);
     expect(response.text.includes('Home')).toBe(true);
     expect(response.text.includes('Produtos')).toBe(true);
-    expect(response.text.includes('Contato')).toBe(true);
+    expect(response.text.includes('Agendar')).toBe(true);
     expect(response.text.includes('Sobre a Barbearia Compasso')).toBe(true);
     expect(response.statusCode).toBe(200);
     expect(response.ok).toBe(true);
@@ -22,5 +22,5 @@ describe("Test app responses", () => {
     expect(response.text.includes('Pacote completo de cabelo e barba')).toBe(true);
     expect(response.statusCode).toBe(200);
     expect(response.ok).toBe(true);
-  });  
+  });
 });

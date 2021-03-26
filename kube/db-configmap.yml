@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: barbearia-db-configmap
 data:
-  POSTGRES_USER=postgres
-  POSTGRES_PASSWORD=postgres
-  POSTGRES_DB=barbearia-db
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: barbearia-db

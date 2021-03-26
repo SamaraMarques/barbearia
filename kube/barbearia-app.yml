@@ -10,7 +10,7 @@ spec:
       port: 80
       targetPort: 3000
   selector:
-    name: barbearia
+    app: barbearia
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,18 +20,18 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      name: barbearia
+      app: barbearia
   template:
     metadata:
       labels:
-        name: barbearia
+        app: barbearia
     spec:
       containers:
       - name: barbearia-container
         image: thileal/barbearia:latest
         envFrom:
          - configMapRef:
-           name: barbearia-app-configmap
+            name: barbearia-app-configmap
 #        resources:
 #          requests:
 #            cpu: 100m
