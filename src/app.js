@@ -54,10 +54,4 @@ app.get('/deletar/:id', async (req, res) => {
 });
 
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log('Não foi possível iniciar servidor');
-  } else {
-    console.log('Servidor escutando na porta 3000!');
-  }
-});
+module.exports = app;
