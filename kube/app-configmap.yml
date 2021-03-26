@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: barbearia-app-configmap
+data:
+  DB_DIALECT=postgres
+  DB_HOST=postgres
+  DB_USERNAME=postgres
+  DB_PASSWORD=postgres
+  DB_DATABASE=barbearia-db
+  DB_PORT=5432

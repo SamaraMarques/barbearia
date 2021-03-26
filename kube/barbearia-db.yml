@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-barbearia-db
+spec:
+  selector:
+    app: barbearia-db
+  ports:
+    - port: 5432
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: barbearia-statefulset
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: barbearia-db
+  serviceName: svc-barbearia-db
+  template:
+    metadata:
+      labels:
+        app: barbearia-db
+      name: barbearia-db
+    spec:
+      containers:
+        - name: barbearia-db-pod
+          image: postgres
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: barbearia-db-configmap
+          volumeMounts:
+            - name: db
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: db
+          persistentVolumeClaim:
+            claimName: barbearia-pvc
