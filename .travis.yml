@@ -14,14 +14,14 @@ before_install:
   - chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
   - docker build -f docker/barbearia.dockerfile -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
+  - npm update
 
 install:
   - npm install
 
 script:
   - npm test
-  - docker push thileal/barbearia
-  - npm update
+  - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
 
 deploy:
