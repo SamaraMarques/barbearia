@@ -22,8 +22,7 @@ install:
 addons:
   sonarcloud:
     organization: "teamunipampa"
-    token:
-      secure: $SONAR_TOKEN
+    token: $SONAR_TOKEN
 
 script:
   - npm test
