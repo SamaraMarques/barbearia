@@ -19,10 +19,17 @@ before_install:
 install:
   - npm install
 
+addons:
+  sonarcloud:
+    organization: "teamunipampa"
+    token:
+      secure: "$SONAR_TOKEN"
+
 script:
   - npm test
   - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
+  - sonar-scanner
 
 deploy:
   provider: script
