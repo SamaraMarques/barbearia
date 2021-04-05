@@ -25,10 +25,10 @@ addons:
     token: $SONAR_TOKEN
 
 script:
+  - sonar-scanner
   - npm test
   - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
-  - sonar-scanner
 
 deploy:
   provider: script
