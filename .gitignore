@@ -2,3 +2,4 @@ node_modules
 /database
 node_modules
 .gitignore
+test-report.xml
