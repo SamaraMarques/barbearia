@@ -3,6 +3,9 @@ node_js: "stable"
 
 sudo: required
 
+notifications:
+  slack: compasso-teamunipampa:CDcSiVTRXCUTsGYrNujZSgdl
+
 branches:
   only:
     - master
