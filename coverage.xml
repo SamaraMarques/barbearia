@@ -1,5 +1,5 @@
 <coverage version="1">
-  <file path="src/views/index.ejs">
+  <file path="src/views/index.ejs"/>
     <lineToCover lineNumber="6" covered="true"/>
     <lineToCover lineNumber="7" covered="false"/>
   </file>
