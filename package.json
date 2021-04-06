@@ -10,8 +10,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": "jest  --coverage",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand  --coverage"
   },
   "repository": {
     "type": "git",
