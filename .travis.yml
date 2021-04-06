@@ -4,7 +4,7 @@ node_js: "stable"
 sudo: required
 
 notifications:
-  slack: compasso-teamunipampa:$SLACK_TOKEN
+  slack: compasso-teamunipampa:CDcSiVTRXCUTsGYrNujZSgdl
 
 branches:
   only:
