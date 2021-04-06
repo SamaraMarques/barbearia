@@ -4,10 +4,13 @@
   "description": "",
   "main": "src/server.js",
   "jest": {
-    "testResultsProcessor": "jest-sonar-reporter"
+    "testResultsProcessor": "jest-sonar-reporter",
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"]
   },
   "scripts": {
     "start": "node src/server.js",
+    "test": "jest  --coverage",
     "test": "jest --runInBand"
   },
   "repository": {
