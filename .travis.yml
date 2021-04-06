@@ -4,7 +4,7 @@ node_js: "stable"
 sudo: required
 
 notifications:
-  slack: "$SLACK_TOKEN"
+  slack: $SLACK_TOKEN
 
 branches:
   only:
