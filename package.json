@@ -6,7 +6,11 @@
   "jest": {
     "testResultsProcessor": "jest-sonar-reporter",
     "collectCoverage": true,
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html",
+      "lcov"
+    ]
   },
   "scripts": {
     "start": "node src/server.js",
