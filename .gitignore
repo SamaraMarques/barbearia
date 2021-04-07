@@ -1,5 +1,6 @@
 node_modules
 /database
+/coverage
 node_modules
 .gitignore
 test-report.xml
