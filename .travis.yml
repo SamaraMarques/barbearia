@@ -5,6 +5,9 @@ sudo: required
 
 notifications:
   slack: compasso-teamunipampa:CDcSiVTRXCUTsGYrNujZSgdl
+  
+git:
+  depth: false
 
 branches:
   only:
