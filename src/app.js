@@ -37,7 +37,7 @@ app.post('/agendar', async (req, res) => {
 });
 
 app.get('/admin', async (req, res) => {
-  const horarios = await Horario.index();
+  horarios = await Horario.index();
 
   res.render('horarios', {
     horarios
