@@ -1,5 +1,3 @@
-teste1
-
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -56,5 +54,3 @@ app.get('/deletar/:id', async (req, res) => {
 
 
 module.exports = app;
-
-teste2
