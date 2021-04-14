@@ -23,4 +23,14 @@ describe("Test app responses", () => {
     expect(response.statusCode).toBe(200);
     expect(response.ok).toBe(true);
   });
+
+  test("It should response the GET method on /agendar path", async () => {
+    const response = await request(app).get("/agendar");
+
+    expect(response.text.includes('Agendar Horário - Barbearia Compasso')).toBe(true);
+    expect(response.text.includes('Seu nome...')).toBe(true);
+    expect(response.text.includes('Seu whatsapp...')).toBe(true);
+    expect(response.statusCode).toBe(200);
+    expect(response.ok).toBe(true);
+  });
 });
