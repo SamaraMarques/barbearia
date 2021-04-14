@@ -1,4 +1,4 @@
-let teste1 = 8;
+teste1
 
 const express = require('express');
 const app = express();
