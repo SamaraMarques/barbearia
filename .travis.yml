@@ -32,7 +32,7 @@ addons:
 
 script:
   - npm test
-  - sonar-scanner
+  - sonar-scanner -Dsonar.projectVersion=$TRAVIS_BUILD_NUMBER
   - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
 
