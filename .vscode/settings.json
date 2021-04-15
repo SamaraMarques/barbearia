@@ -1,2 +1,15 @@
 {
+  "sonarlint.connectedMode.project": {
+    "projectKey": "SamaraMarques_barbearia"
+  }
 }
+/*
+// A configuração abaixo deve ser feitas nas configurações (settings.json) do usuário no VSCode
+
+"sonarlint.connectedMode.connections.sonarcloud": [
+  {
+    "organizationKey": "teamunipampa",
+    "token": "<https://sonarcloud.io/account/security/>" //Link para gerar token
+  }
+],
+*/
