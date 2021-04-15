@@ -6,6 +6,7 @@ const models = require('./app/models');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.disable("x-powered-by");
 
 
 app.set('view engine', 'ejs');
