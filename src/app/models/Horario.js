@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Horario = sequelize.define('Horario', {
+  return sequelize.define('Horario', {
     data: {
       allowNull: false,
       type: DataTypes.DATE
@@ -7,6 +7,4 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING,
     whatsapp: DataTypes.STRING,
   });
-
-  return Horario;
 };

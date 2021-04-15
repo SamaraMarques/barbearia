@@ -27,7 +27,7 @@ app.get('/agendar', async (req, res) => {
 });
 
 app.post('/agendar', async (req, res) => {
-  horario = await Horario.criar(req.body);
+  const horario = await Horario.criar(req.body);
 
   if (horario.error) {
     res.render('erro');
@@ -37,7 +37,7 @@ app.post('/agendar', async (req, res) => {
 });
 
 app.get('/admin', async (req, res) => {
-  horarios = await Horario.index();
+  const horarios = await Horario.index();
 
   res.render('horarios', {
     horarios
