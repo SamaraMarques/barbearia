@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 const models = require('./app/models');
 
 let app = express();
-app.disable("x-powered-by");
+//app.disable("x-powered-by");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
