@@ -5,7 +5,7 @@ sudo: required
 
 notifications:
   slack: compasso-teamunipampa:CDcSiVTRXCUTsGYrNujZSgdl
-  
+
 git:
   depth: false
 
@@ -18,8 +18,6 @@ services:
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
   - chmod +x kubectl && sudo mv kubectl /usr/local/bin/kubectl
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
-  - docker build -f docker/barbearia.dockerfile -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
   - npm update
 
 install:
@@ -33,6 +31,10 @@ addons:
 script:
   - npm test
   - sonar-scanner -Dsonar.projectVersion=$TRAVIS_BUILD_NUMBER
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+  - docker build -f docker/barbearia.dockerfile -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
   - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
 
