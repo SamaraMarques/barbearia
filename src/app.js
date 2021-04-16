@@ -8,12 +8,11 @@ app.disable("x-powered-by");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
- Horario = require('./app/controllers/Horario');
+ const Horario = require('./app/controllers/Horario');
 
 app.get('/', async (req, res) => {
   res.render('index');
