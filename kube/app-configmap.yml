@@ -9,3 +9,4 @@ data:
   DB_PASSWORD: postgres
   DB_DATABASE: barbearia-db
   DB_PORT: "5432"
+  NODE_ENV: "development"

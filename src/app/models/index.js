@@ -4,7 +4,10 @@ const Sequelize = require('sequelize');
 const config = require('../../config/database.js');
 
 const db = {};
-const sequelize = new Sequelize(config);
+
+const environment = process.env.NODE_ENV || 'development';
+
+const sequelize = new Sequelize(config[environment]);
 
 /*eslint-disable */
 fs
