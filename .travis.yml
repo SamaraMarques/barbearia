@@ -37,9 +37,4 @@ after_success:
   - docker build -f docker/barbearia.dockerfile -t thileal/barbearia:$TRAVIS_BUILD_NUMBER .
   - docker push thileal/barbearia:$TRAVIS_BUILD_NUMBER
   - bash scripts/update-kube.sh
-
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: master
+  - bash scripts/deploy.sh || travis_terminate 1;
