@@ -4,7 +4,7 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const models = require('./app/models');
 
-app.disable("x-powered-by");
+//app.disable("x-powered-by");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const Horario = require('./app/controllers/Horario');
+ Horario = require('./app/controllers/Horario');
 
 app.get('/', async (req, res) => {
   res.render('index');
@@ -38,7 +38,7 @@ app.post('/agendar', async (req, res) => {
 });
 
 app.get('/admin', async (req, res) => {
-  const horarios = await Horario.index();
+   horarios = await Horario.index();
 
   res.render('horarios', {
     horarios
